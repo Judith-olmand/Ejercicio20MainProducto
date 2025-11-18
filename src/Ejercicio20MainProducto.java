@@ -1,13 +1,30 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-void main() {
-    //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-    // to see how IntelliJ IDEA suggests fixing it.
-    IO.println(String.format("Hello and welcome!"));
+import java.util.Scanner;
 
-    for (int i = 1; i <= 5; i++) {
-        //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-        // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-        IO.println("i = " + i);
+public  class Ejercicio20MainProducto {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        Producto producto1 = new Producto("Leche",1.10);
+        Producto producto2 = new Producto("Miel", 3.80);
+
+        System.out.println("La " + producto1.nombre + " tiene un precio de " + producto1.precio + "€");
+        System.out.println("La " + producto2.nombre + " tiene un precio de " + producto2.precio + "€");
+
+
+        System.out.println("Introduce el precio nuevo del producto1: ");
+        try{
+            producto1.actualizarPrecio(sc.nextDouble());
+            System.out.println("La " + producto1.nombre + " tiene un precio nuevo de " + producto1.precio + "€");
+        } catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+
+        System.out.println("Introduce el precio nuevo del producto2: ");
+        try{
+            producto2.actualizarPrecio(sc.nextDouble());
+            System.out.println("La " + producto2.nombre + " tiene un precio nuevo de " + producto2.precio + "€");
+        } catch(Exception e){
+            System.out.println(e.getMessage());
+        }
     }
 }

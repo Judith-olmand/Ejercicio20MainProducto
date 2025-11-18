@@ -1,7 +1,5 @@
-package PACKAGE_NAME;
-
-public class PrecioNegativo extends RuntimeException {
-  public PrecioNegativo(String message) {
-    super(message);
-  }
+public class PrecioNegativo extends Exception {
+    public PrecioNegativo(String message) {
+        super(message);
+    }
 }
